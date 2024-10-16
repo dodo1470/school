@@ -30,22 +30,31 @@ int main()
         cin>>inp;
         if (inp == 'P')
         {
-            mod = 2;
+            int temp = 0;
             for (int i = 3; i >= 0; i--)
             {
                 if (cm[i])
                 {
-                    z = z | mod;
-                } /*else if (!cm[i])
+                    z = z | pow(2, 2*temp+1);
+                } else if (!cm[i])
                 { 
-                    if ((z & pow(2, mod-1)) > 0){
-                        z = z ^ mod;
-                    } else{
-                        //huj
+                    if(z & pow(2, 2*temp+1))
+                    {
+                        z = z ^ pow(2, 2*temp+1);
                     }
-                }*/
-                mod = mod * 4;
-
+                }
+                if(pos[i]%2 == 1)
+                {
+                   z = z | pow(2, 2*temp); 
+                } else
+                {
+                    if(z & pow(2, 2*temp))
+                    {
+                        z = z ^ pow(2, 2*temp);
+                    }
+                }
+                
+                temp++;
             }
             for(int i = 0; i < 4; i++)
             {
@@ -67,7 +76,24 @@ int main()
             {
                 cm[player] = 1;
             } 
+            
+            for(int zb = 0; zb < 4; zb++)
+            {
+                if(zb != player && pos[player] != 0 && pos[player] == pos[zb])
+                {
+                    cout<<"zbicie\n";
+                    pos[zb] = 0;
+                    cm[zb] = 0;
+                    pr[zb] = 0;
+                }
+            }
+            if (cm[player] && roll == pr[player])
+            {
             pr[player] = roll;
+            player--;
+            } else{
+                pr[player] = roll;
+            }
             player++;
         }
 
@@ -79,7 +105,11 @@ int main()
                 game = 0;
                 winner = j + 1;
             }
+
         }
+
+        /*
+            }*/
     }
     cout<<"END OF GAME";
     return 0;
