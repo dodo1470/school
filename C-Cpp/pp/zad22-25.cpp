@@ -81,7 +81,6 @@ int main()
             {
                 if(zb != player && pos[player] != 0 && pos[player] == pos[zb])
                 {
-                    cout<<"zbicie\n";
                     pos[zb] = 0;
                     cm[zb] = 0;
                     pr[zb] = 0;
@@ -96,8 +95,6 @@ int main()
             }
             player++;
         }
-
-
         for (int j = 0; j < 4; j++)
         {
             if(pos[j] >= roz)
@@ -105,11 +102,7 @@ int main()
                 game = 0;
                 winner = j + 1;
             }
-
         }
-
-        /*
-            }*/
     }
     cout<<"END OF GAME";
     return 0;
