@@ -1,0 +1,48 @@
+body {
+	background: #bd6548;
+}
+
+header {
+	background: #f0ec00;
+	height: fit-content;
+	min-width: 200px;
+}
+
+h1 {
+	text-align: center;
+	font-family:  Comic Sans MS;
+	font-size: 90px;
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+
+h3 {
+	margin-top: 10px;
+	text-align: center;
+	font-family:  Comic Sans MS;
+	font-size: xx-large;
+}
+
+nav {
+	width: 15%;
+	height: fit-content;
+	background: #7cf000;
+	float: left;
+	text-align: center;
+	white-space: normal;
+	margin: auto;
+}
+
+content {
+	height: fit-content;
+	width: 85%;
+	background: #7cf000;
+	float: left;
+	white-space: normal;
+	margin: auto;
+}
+
+footer {
+	clear: both;
+	background: #f0ec00;
+}
